@@ -1,0 +1,13 @@
+﻿<!DOCTYPE html >
+<html>
+<head>
+    <title>Hello World</title>
+</head>
+<body>
+    <img src="img/dog.png" alt="可爱的小狗" title="可爱的小狗" /><br />
+    <button onclick="hw()">外部js</button><br />
+
+    <a href="/test">就像test.aspx一样</a>
+    <script src="js/hw.js"></script>
+</body>
+</html>
