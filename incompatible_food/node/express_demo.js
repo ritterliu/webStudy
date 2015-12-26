@@ -7,11 +7,10 @@ app.get('/', function(req, res) {
 })
 
 app.get("/foodName", function(req, res) {
-    var strings = ["rad", "bla", "ska"]
-    var n = Math.floor(Math.random() * strings.length)
-	console.log("req.wd:" + res.jsonp(obj));
-
-    res.send(strings[n])
+    console.log(req.query);
+    console.log(req.query.foodName);
+    var ret = ["a", "b", "c", "d", "e", "f", "g"];
+    res.jsonp({s: ret});
 })
 
 var server = app.listen(PORT, function(){

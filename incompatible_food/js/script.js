@@ -46,19 +46,39 @@ $(document).ready(function() {
                 url: "http://127.0.0.1:8333/foodName",
                 type: "GET",
                 dataType: "jsonp",
-                jsonp: 'jsoncallback',
-                async: false,
+                async: true,
                 timeout: 5000, //请求超时
                 data: {
-                    "wd": food_input.val(),
-                    "cb": "show_prediction"
+                    "foodName": food_input.val()
                 },
-                success: function(json) {},
+                success: function(json) {
+                    show_prediction(json);
+                },
                 error: function(xhr) {
                     return;
                 }
 
             });
+
+        //if (event.which != 39 && event.which != 40 && event.which != 37 && event.which != 38 && event.which != 13)
+        //    $.ajax({
+        //        url: "http://127.0.0.1:8333/foodName",
+        //        type: "GET",
+        //        dataType: "json",
+        //        // jsonp: 'jsoncallback',
+        //        async: false,
+        //        timeout: 5000, //请求超时
+        //        data: {
+        //            "wd": food_input.val()
+        //        },
+        //        success: function(json) {
+        //            alert(json)
+        //        },
+        //        error: function(xhr) {
+        //            return;
+        //        }
+        //
+        //    });
     });
 
     search.click(function() {
